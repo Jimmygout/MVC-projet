@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Personne{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1 class="text-center mb-3">Créer une personne</h1>
+
+    {{ include('personne/_form.html.twig') }}
+
+    <div class="text-center"><a  class="btn btn-primary" href="{{ path('personne_index') }}">Retour à la liste</a></div>
+    </div>
+{% endblock %}

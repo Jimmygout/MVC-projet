@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des personnes{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1 class="text-center mb-3">Liste des personnes</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Prenom</th>
+                <th>Nom</th>
+                <th>Age</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for personne in personnes %}
+            <tr>
+                <td>{{ personne.Prenom }}</td>
+                <td>{{ personne.Nom }}</td>
+                <td>{{ personne.Age }}</td>
+                <td>
+                    {{ include('personne/_delete_form.html.twig') }}
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">Pas de resultat</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+<div class="text-center"><a class="btn btn-primary" href="{{ path('personne_new') }}">Ajouter</a></div>
+    
+    </div>
+{% endblock %}
